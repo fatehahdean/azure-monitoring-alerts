@@ -1,0 +1,9 @@
+// Failed administrative operations — what failed, who did it, how often
+// Use: the investigation query behind the activity-failures alert
+AzureActivity
+| where TimeGenerated > ago(24h)
+| where CategoryValue == "Administrative"
+| where ActivityStatusValue == "Failure"
+| summarize FailureCount = count(), SampleOperation = any(OperationNameValue)
+    by Caller, ResourceGroup
+| order by FailureCount desc

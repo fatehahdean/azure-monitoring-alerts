@@ -1,0 +1,8 @@
+// VM CPU trend — average CPU per computer over the last 24 hours
+// Use: spotting sustained load before it triggers the 80% alert
+Perf
+| where TimeGenerated > ago(24h)
+| where ObjectName == "Processor" and CounterName == "% Processor Time"
+| where InstanceName == "_Total"
+| summarize AvgCPU = round(avg(CounterValue), 1) by Computer, bin(TimeGenerated, 15m)
+| order by TimeGenerated desc

@@ -1,0 +1,7 @@
+// VM heartbeat status — when did each machine last report in?
+// Use: the investigation query behind the heartbeat-lost alert
+Heartbeat
+| summarize LastHeartbeat = max(TimeGenerated) by Computer, OSType
+| extend MinutesSilent = datetime_diff("minute", now(), LastHeartbeat)
+| extend Status = iff(MinutesSilent > 10, "SILENT", "OK")
+| order by MinutesSilent desc
