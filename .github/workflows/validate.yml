@@ -1,0 +1,23 @@
+name: Validate Bicep
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  bicep-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Bicep
+        run: az bicep install
+
+      - name: Build Bicep template
+        run: az bicep build --file bicep/main.bicep --stdout > /dev/null
+
+      - name: Check Python syntax
+        run: python3 -m py_compile scripts/health_report.py
