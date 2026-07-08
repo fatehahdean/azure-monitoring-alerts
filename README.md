@@ -62,5 +62,10 @@ az monitor diagnostic-settings subscription create \
 
 Log Analytics includes 5 GB/month free ingestion; the alert rules cost a few cents per month at these evaluation frequencies. The whole stack tears down with `az group delete --name rg-monitoring`.
 
-<!-- TODO: screenshots — fired alert email, workspace query results -->
-<!-- TODO: link kql/ library once added -->
+## Deployment evidence
+
+![Deployed resources](images/portal-resources.png)
+
+![Health report — all clear](images/health-report.png)
+
+![Fired alert email](images/alert-email.png)
