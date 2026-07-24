@@ -67,7 +67,7 @@ Log Analytics includes 5 GB/month free ingestion; the alert rules cost a few cen
 ![Deployed resources]<img width="1470" height="956" alt="alert-email" src="https://github.com/user-attachments/assets/3e3ed142-b160-474f-bb60-a97af2a4ffeb" />
 
 
-![Health report — all clear]<img width="1470" height="956" alt="health-report" src="https://github.com/user-attachments/assets/c67e4a3f-5159-47b6-8cb0-29e5b0220b32" />
+***[Health report — all clear]*** <img width="1470" height="956" alt="health-report" src="https://github.com/user-attachments/assets/c67e4a3f-5159-47b6-8cb0-29e5b0220b32" />
 
 
 ![Fired alert email]<img width="1470" height="956" alt="portal-resources" src="https://github.com/user-attachments/assets/e4a09eef-717f-4f27-96d7-8ba4b44fc660" />
